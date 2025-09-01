@@ -1,0 +1,24 @@
+{
+  "name": "google-ads-ai-automation",
+  "version": "1.0.0",
+  "description": "AI Agent automation workflow for Google Ads campaigns - 2015 Security Services Ltd",
+  "main": "orchestrator.js",
+  "scripts": {
+    "start": "node orchestrator.js",
+    "dev": "node orchestrator.js",
+    "serve": "node -e \"const http = require('http'); const fs = require('fs'); const path = require('path'); const server = http.createServer((req, res) => { if (req.url === '/' || req.url === '/dashboard') { res.writeHead(200, {'Content-Type': 'text/html'}); fs.createReadStream(path.join(__dirname, 'ui', 'dashboard.html')).pipe(res); } else if (req.url.endsWith('.css')) { res.writeHead(200, {'Content-Type': 'text/css'}); fs.createReadStream(path.join(__dirname, 'ui', req.url)).pipe(res); } else if (req.url.endsWith('.js')) { res.writeHead(200, {'Content-Type': 'application/javascript'}); fs.createReadStream(path.join(__dirname, 'ui', req.url)).pipe(res); } else if (req.url === '/api/campaign-status') { res.writeHead(200, {'Content-Type': 'application/json'}); res.end(JSON.stringify({campaignStatus: 'Running', KPIs: {CTR: '2.1%', CPC: '£1.45', CPA: '£42.30', ROAS: '3.2x'}})); } else { res.writeHead(404); res.end('Not Found'); } }); server.listen(8000, () => console.log('Dashboard server running on http://localhost:8000'));\""
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "keywords": [
+    "google-ads",
+    "ai-automation",
+    "ppc",
+    "marketing-automation",
+    "security-services"
+  ],
+  "author": "AI Agent Automation System",
+  "license": "MIT"
+}
