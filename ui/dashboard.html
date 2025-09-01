@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads AI Automation Dashboard - 2015 Security Services</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1>Google Ads AI Automation</h1>
+                    <p class="client-info">2015 Security Services Ltd - London, UK</p>
+                </div>
+                <div class="header-right">
+                    <div class="status-indicator" id="systemStatus">
+                        <span class="status-dot"></span>
+                        <span class="status-text">System Active</span>
+                    </div>
+                    <div class="last-updated" id="lastUpdated">
+                        Last updated: Loading...
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard-main">
+            <!-- Campaign Overview -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Campaign Overview</h2>
+                    <div class="campaign-health" id="campaignHealth">
+                        <span class="health-indicator"></span>
+                        <span class="health-text">Loading...</span>
+                    </div>
+                </div>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3>Budget Utilization</h3>
+                        <div class="budget-info" id="budgetInfo">
+                            <div class="budget-amount">£0.00 / £20.00</div>
+                            <div class="budget-bar">
+                                <div class="budget-progress" style="width: 0%"></div>
+                            </div>
+                            <div class="budget-status">Loading...</div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>Campaign Status</h3>
+                        <div class="campaign-status" id="campaignStatus">
+                            <div class="status-value">Loading...</div>
+                            <div class="status-description">Checking campaign health...</div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3>Active Alerts</h3>
+                        <div class="alerts-info" id="alertsInfo">
+                            <div class="alerts-count">0</div>
+                            <div class="alerts-description">No active alerts</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KPI Metrics -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Key Performance Indicators</h2>
+                    <div class="performance-score" id="performanceScore">
+                        <span class="score-label">Overall Score:</span>
+                        <span class="score-value">--/100</span>
+                    </div>
+                </div>
+                
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <h3>Click-Through Rate</h3>
+                            <span class="kpi-status" id="ctrStatus">--</span>
+                        </div>
+                        <div class="kpi-value" id="ctrValue">--%</div>
+                        <div class="kpi-target">Target: 2.0%</div>
+                        <div class="kpi-change" id="ctrChange">--</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <h3>Cost Per Click</h3>
+                            <span class="kpi-status" id="cpcStatus">--</span>
+                        </div>
+                        <div class="kpi-value" id="cpcValue">£--</div>
+                        <div class="kpi-target">Target: ≤£2.50</div>
+                        <div class="kpi-change" id="cpcChange">--</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <h3>Cost Per Acquisition</h3>
+                            <span class="kpi-status" id="cpaStatus">--</span>
+                        </div>
+                        <div class="kpi-value" id="cpaValue">£--</div>
+                        <div class="kpi-target">Target: ≤£60.00</div>
+                        <div class="kpi-change" id="cpaChange">--</div>
+                    </div>
+                    
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <h3>Return on Ad Spend</h3>
+                            <span class="kpi-status" id="roasStatus">--</span>
+                        </div>
+                        <div class="kpi-value" id="roasValue">--x</div>
+                        <div class="kpi-target">Target: ≥2.0x</div>
+                        <div class="kpi-change" id="roasChange">--</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Agent Status -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>AI Agent Status</h2>
+                    <div class="workflow-status" id="workflowStatus">
+                        <span class="workflow-indicator"></span>
+                        <span class="workflow-text">Workflow Idle</span>
+                    </div>
+                </div>
+                
+                <div class="agents-grid">
+                    <div class="agent-card" id="campaignSetupAgent">
+                        <div class="agent-header">
+                            <h3>Campaign Setup Agent</h3>
+                            <span class="agent-status">idle</span>
+                        </div>
+                        <div class="agent-activity">No recent activity</div>
+                        <div class="agent-timestamp">--</div>
+                    </div>
+                    
+                    <div class="agent-card" id="keywordManagerAgent">
+                        <div class="agent-header">
+                            <h3>Keyword Manager Agent</h3>
+                            <span class="agent-status">idle</span>
+                        </div>
+                        <div class="agent-activity">No recent activity</div>
+                        <div class="agent-timestamp">--</div>
+                    </div>
+                    
+                    <div class="agent-card" id="adCopyAgent">
+                        <div class="agent-header">
+                            <h3>Ad Copy Agent</h3>
+                            <span class="agent-status">idle</span>
+                        </div>
+                        <div class="agent-activity">No recent activity</div>
+                        <div class="agent-timestamp">--</div>
+                    </div>
+                    
+                    <div class="agent-card" id="bidOptimizerAgent">
+                        <div class="agent-header">
+                            <h3>Bid Optimizer Agent</h3>
+                            <span class="agent-status">idle</span>
+                        </div>
+                        <div class="agent-activity">No recent activity</div>
+                        <div class="agent-timestamp">--</div>
+                    </div>
+                    
+                    <div class="agent-card" id="performanceMonitorAgent">
+                        <div class="agent-header">
+                            <h3>Performance Monitor Agent</h3>
+                            <span class="agent-status">idle</span>
+                        </div>
+                        <div class="agent-activity">No recent activity</div>
+                        <div class="agent-timestamp">--</div>
+                    </div>
+                    
+                    <div class="agent-card" id="reportingAgent">
+                        <div class="agent-header">
+                            <h3>Reporting Agent</h3>
+                            <span class="agent-status">idle</span>
+                        </div>
+                        <div class="agent-activity">No recent activity</div>
+                        <div class="agent-timestamp">--</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Recent Activity</h2>
+                    <button class="refresh-btn" id="refreshBtn">Refresh Data</button>
+                </div>
+                
+                <div class="activity-feed" id="activityFeed">
+                    <div class="activity-item">
+                        <div class="activity-time">--:--</div>
+                        <div class="activity-content">
+                            <div class="activity-title">System Initialized</div>
+                            <div class="activity-description">Dashboard loaded successfully</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Performance Chart -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Performance Trends</h2>
+                    <div class="chart-controls">
+                        <select id="chartMetric">
+                            <option value="ctr">CTR</option>
+                            <option value="cpc">CPC</option>
+                            <option value="cpa">CPA</option>
+                            <option value="roas">ROAS</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="performanceChart" width="800" height="300"></canvas>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>Google Ads AI Automation System v1.0</p>
+                    <p>Powered by Multi-Agent AI Architecture</p>
+                </div>
+                <div class="footer-right">
+                    <p>2015 Security Services Ltd</p>
+                    <p>London, United Kingdom</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading dashboard data...</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="dashboard.js"></script>
+</body>
+</html>
